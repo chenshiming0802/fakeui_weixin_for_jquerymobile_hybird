@@ -1,0 +1,94 @@
+
+
+.spr_body {
+    left:0px;
+    position:absolute; z-index:1;
+    top:0px; bottom:0px;
+    width:100%;
+    overflow: hidden;
+}
+
+.scroller {
+    position:absolute; z-index:1;
+    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width:100%;
+    padding:0;
+}
+/*
+.scroller ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:100%;
+    text-align:left;
+
+}
+ 
+.scroller li {
+    padding:0 10px;
+    height:48px;
+    line-height:40px;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #fff;
+    background-color:#fafafa;
+    font-size:14px;
+}
+*/
+
+
+#scroller-pullDown, #scroller-pullUp {
+    height:48px;
+    line-height:48px;
+    padding:5px 10px;
+    font-weight:bold;
+    font-size:14px;
+    color:#888;
+    text-align: center;
+    background-color: #ebebeb;
+}
+#scroller-pullUp{
+    height:96px;
+    
+}
+.pullDownLabel,.pullUpLabel,.scroller-holder{
+    background-color:  #ebebeb;
+}
+#scroller-pullDown .pullDownIcon, #scroller-pullUp .pullUpIcon  {
+    display:block; float:left;
+    width:40px; height:40px;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;  
+}
+#scroller-pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#scroller-pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#scroller-pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#scroller-pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#scroller-pullDown.loading .pullDownIcon, #scroller-pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+} 
+
