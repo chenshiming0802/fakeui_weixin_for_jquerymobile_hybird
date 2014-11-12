@@ -36,7 +36,7 @@ require([
 	"backbone",
 	"backbone-requirejs/routers/mobileRouter"
 ], function ( $, Backbone, Mobile ) {
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
+	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
 	$( document ).on( "mobileinit",
 
 		// Set up the "mobileinit" handler before requiring jQuery Mobile's module

@@ -5,7 +5,8 @@
     position:absolute; z-index:1;
     top:0px; bottom:0px;
     width:100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    overflow:auto;
 }
 
 .scroller {
