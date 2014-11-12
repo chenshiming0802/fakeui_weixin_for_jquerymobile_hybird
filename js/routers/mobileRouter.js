@@ -39,7 +39,7 @@ define([
         index: function() {
             setTimeout(
                 "T.go('#main')",
-                1000
+                3000
             );
             //$.mobile.changePage( "#index" , { reverse: false, changeHash: false } );
         },

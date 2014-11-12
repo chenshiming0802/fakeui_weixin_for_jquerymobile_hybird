@@ -57,17 +57,18 @@ define([
             T.pressDisplay(this.$el.find("ul#iUl li"));  
             var that = this;
             T.scolllUI(IScrollLoadData,"main",
-                function(){ 
-                    setTimeout(that.onResume(),1000);   
+                function(cb){ 
+                    that.onResume();   
                 },
                 function(){ 
-                    setTimeout(that.onResume(),1000);
+                    that.onResume();   
                 }
             );     
             this.$el.find("ul#iUl li").bind("tap",function(){  
                 T.go("#main_1");
             });             
         },
+
     } );
     return View;
 

@@ -203,3 +203,39 @@ ul.wi_s14 li{width:25%;}
 .no{display:none;}
 
 /*app------------------------------------------------------*/
+
+
+/*load UI*/
+DIV.loadView-cont {
+	Z-INDEX: 98;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	LEFT: 0px;
+	WIDTH: 100%;
+	POSITION: absolute;
+	TOP: 0px;
+	HEIGHT: 100%
+}
+DIV.loadView-bg {
+	Z-INDEX: -1;
+	FILTER: alpha(opacity=70);
+	LEFT: 0px;
+	WIDTH: 100%;
+	POSITION: absolute;
+	TOP: 0px;
+	HEIGHT: 100%;
+	BACKGROUND-COLOR: #666666;
+	opacity: 0.7
+}
+DIV.loadView {
+	BORDER-RIGHT: #555 1px solid;
+	BORDER-TOP: #555 1px solid;
+	Z-INDEX: 99;
+	MARGIN-LEFT: auto;
+	BORDER-LEFT: #555 1px solid;
+	WIDTH: 30%;
+	MARGIN-RIGHT: auto;
+	BORDER-BOTTOM: #555 1px solid;
+	POSITION: relative;
+	TOP: 25%;
+	BACKGROUND-COLOR: #fff
+}

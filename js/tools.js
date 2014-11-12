@@ -1,5 +1,47 @@
 /*项目公共的Tools使用类,具有其他项目使用的特性*/
 var T = {
+    /*for loadUI*/
+    _showLoadView: function() {
+        window.showLoadView_elt = null;
+        if (document.createElement && document.getElementById) {
+            var dbg = document.createElement("div");
+            dbg.id = "nd-bdg";
+            dbg.className = "loadView-bg";
+
+            var dgc = document.createElement("div");
+            dgc.className = "loadView-cont";
+            dgc.appendChild(dbg);
+
+            //adjust positioning if body has a margin
+            if (document.body.offsetLeft > 0)
+                dgc.style.marginLeft = document.body.offsetLeft + "px";
+            document.body.appendChild(dgc);
+
+            window.showLoadView_elt = dgc;
+        }
+    },
+    /*for loadUI*/
+    _hideLoadView: function() {
+        if (window.showLoadView_elt) {
+            window.showLoadView_elt.style.display = "none";
+            window.showLoadView_elt.parentNode.removeChild(window.showLoadView_elt);
+        }
+    },
+    /*loader界面-模式窗口 isLoad:true/false */
+    loadUI: function(isLoad) {
+        if (isLoad) {
+            this._showLoadView();
+            $.mobile.loading("show", {
+                text: "正在努力加载数据",
+                textVisible: true,
+                theme: "b"
+            });            
+        } else {
+            $.mobile.loading('hide');
+            this._hideLoadView();
+        }
+    },
+
     getTpl:function(el){
         var tpl = el.clone();
         tpl.removeClass("_tpl");

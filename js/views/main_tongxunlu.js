@@ -40,12 +40,7 @@ define([
                 this.dropBottomAction,
                 30
             ); 
-            T.scolllUI(IScrollLoadData,"main",
-                function(){
-                },
-                function(){
-                }
-            );        
+            T.scolllUI(IScrollLoadData,"main",null,null);        
             return true;
         },
         onResume:function(){
