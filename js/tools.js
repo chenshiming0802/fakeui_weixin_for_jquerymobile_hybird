@@ -2,6 +2,7 @@
 var T = {
     /*for loadUI*/
     _showLoadView: function() {
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
         window.showLoadView_elt = null;
         if (document.createElement && document.getElementById) {
             var dbg = document.createElement("div");
@@ -23,9 +24,15 @@ var T = {
     /*for loadUI*/
     _hideLoadView: function() {
         if (window.showLoadView_elt) {
-            window.showLoadView_elt.style.display = "none";
-            window.showLoadView_elt.parentNode.removeChild(window.showLoadView_elt);
+            try{
+                window.showLoadView_elt.style.display = "none";
+                window.showLoadView_elt.parentNode.removeChild(window.showLoadView_elt);
+            }catch(e){
+                T.log(e);
+
+            }
         }
+        document.addEventListener('touchmove', function (e) {}, false); 
     },
     /*loader界面-模式窗口 isLoad:true/false */
     loadUI: function(isLoad) {
